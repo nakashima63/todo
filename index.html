@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODOアプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TODOアプリ</h1>
+        </header>
+
+        <div class="input-section">
+            <form id="todo-form">
+                <div class="form-group">
+                    <input
+                        type="text"
+                        id="todo-input"
+                        placeholder="新しいタスクを入力..."
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="priority">優先度:</label>
+                        <select id="priority">
+                            <option value="low">低</option>
+                            <option value="medium" selected>中</option>
+                            <option value="high">高</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="due-date">期限:</label>
+                        <input type="date" id="due-date">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">追加</button>
+            </form>
+        </div>
+
+        <div class="filter-section">
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="タスクを検索..."
+                >
+            </div>
+
+            <div class="filter-buttons">
+                <button class="btn btn-filter active" data-filter="all">すべて</button>
+                <button class="btn btn-filter" data-filter="active">未完了</button>
+                <button class="btn btn-filter" data-filter="completed">完了</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <span id="total-count">総タスク: 0</span>
+            <span id="active-count">未完了: 0</span>
+            <span id="completed-count">完了: 0</span>
+        </div>
+
+        <ul id="todo-list" class="todo-list"></ul>
+
+        <div class="footer">
+            <button id="clear-completed" class="btn btn-secondary">完了済みを削除</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
